@@ -1,7 +1,9 @@
 const cityNameInput = document.getElementById("cityNameInput");
 const cityNameResetBtn = document.getElementById("cityNameReset");
 const headerCityName = document.getElementById("headerCityName");
+const skySelection = document.getElementById("skySelect");
 
+// Wave 3
 function updateCityName() {
     const city = cityNameInput.value.trim(); // Used trim to get rid of leading.trailing whitespace
     if (city) {
@@ -17,6 +19,8 @@ cityNameResetBtn.addEventListener('click', () => { // Could change to just 'set'
     cityNameInput.value = '';
     headerCityName.textContent = '';
 });
+
+// Wave 2
 let currentWeather = 70
 
 const tempValue = document.getElementById('tempValue')
@@ -53,4 +57,7 @@ document.getElementById('decreaseTempControl').addEventListener('click', () => {
 })
 
 updateTempEmoji()
+
+// Wave 4
+const skyValue = skySelection.value;
 

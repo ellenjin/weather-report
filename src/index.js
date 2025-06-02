@@ -1,6 +1,9 @@
 const cityNameInput = document.getElementById("cityNameInput");
 const cityNameResetBtn = document.getElementById("cityNameReset");
 const headerCityName = document.getElementById("headerCityName");
+const tempValue = document.getElementById("tempValue");
+const gardenEmoji = document.getElementById("gardenContent");
+let currentTemp = 70;
 
 function updateCityName() {
     const city = cityNameInput.value.trim(); // Used trim to get rid of leading.trailing whitespace
@@ -17,39 +20,34 @@ cityNameResetBtn.addEventListener('click', () => { // Could change to just 'set'
     cityNameInput.value = '';
     headerCityName.textContent = '';
 });
-let currentWeather = 70
-
-const tempValue = document.getElementById('tempValue')
-const gardenEmoji = document.getAnimations('gardenContent')
 
 const updateTempEmoji = () => {
-    tempValue.textContent = currentWeather
-
+    tempValue.textContent = currentTemp
     tempValue.classList.remove("red", "orange", "yellow", "green", "teal")
 
-    if (currentWeather >= 80) {
-        tempValue.classList.remove("red")
+    if (currentTemp >= 80) {
+        tempValue.classList.add("red")
         gardenEmoji.textContent = "🌞🏜️🌵🦎🔥"
     } else if (currentTemp >= 70) {
         tempValue.classList.add("orange");
-        garden.textContent = "🌸🦋🌼🌺🐝";
+        gardenEmoji.textContent = "🌸🦋🌼🌺🐝";
      } else if (currentTemp >= 60) {
         tempValue.classList.add("yellow");
-        garden.textContent = "🌲🦌🍄🌳🪵";
+        gardenEmoji.textContent = "🌲🦌🍄🌳🪵";
     } else {
         tempValue.classList.add("green");
-        garden.textContent = "❄️🌨️⛄️🌲🏔️";
+        gardenEmoji.textContent = "❄️🌨️⛄️🌲🏔️";
     }
 }
 
 document.getElementById('increaseTempControl').addEventListener('click', () => {
-    currentWeather++;
-    updateTempEmoji()
+    currentTemp++;
+    updateTempEmoji();
 })
 
 document.getElementById('decreaseTempControl').addEventListener('click', () => {
-    currentWeather--;
-    updateTempEmoji()
+    currentTemp--;
+    updateTempEmoji();
 })
 
 updateTempEmoji()

@@ -7,6 +7,7 @@ const currentTempButton = document.getElementById('currentTempButton');
 const applyCityArrow = document.getElementById('applyCity');
 const skySelection = document.getElementById('skySelect');
 
+let isFahrenheit = true;
 let currentTemp = 70;
 
 function updateCityName() {
@@ -17,6 +18,13 @@ function updateCityName() {
     headerCityName.textContent = '';
   }
 }
+
+document.getElementById('toggleTempUnit').addEventListener('click', () => {
+  isFahrenheit = !isFahrenheit;
+  updateTempEmoji();
+  const button = document.getElementById('toggleTempUnit');
+  button.textContent = isFahrenheit ? '°C' : '°F';
+});
 
 applyCityArrow.addEventListener('click', () => {
   updateCityName();
@@ -31,8 +39,12 @@ cityNameResetBtn.addEventListener('click', () => {
 });
 
 const updateTempEmoji = () => {
-  tempValue.textContent = currentTemp;
-  tempValue.classList.remove('red', 'orange', 'yellow', 'green', 'teal');
+  const displayTemp = isFahrenheit
+    ? currentTemp
+    : Math.round(((currentTemp - 32) * 5) / 9);
+  tempValue.textContent = `${displayTemp}`;
+
+  tempValue.classList.remove('red', 'orange', 'yellow', 'green');
 
   if (currentTemp >= 80) {
     tempValue.classList.add('red');
@@ -102,5 +114,3 @@ const getRealWeather = (lat, lon) => {
 };
 
 updateTempEmoji();
-
-

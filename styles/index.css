@@ -64,10 +64,10 @@ h2 {
 }
 
 .temperature__section button {
-  background-color: #9b8f65;
+  background-color: #75866e;
   border: none;
   color: white;
-  padding: 10px 12px;
+  padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -79,8 +79,14 @@ h2 {
   letter-spacing: 1.5px;
 }
 
+.temp-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
 .temperature__section button:hover {
-  background-color: #636d3d;
+  background-color: #435d36;
 }
 
 .garden__section {
@@ -133,26 +139,22 @@ h2 {
 
 .red {
   color: rgb(168, 28, 28);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .orange {
-  color: rgb(255, 191, 0);
+  color: rgb(255, 197, 23);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .yellow {
-  color: rgb(255, 230, 88);
-}
-
-.yellow-green {
-  color: yellowgreen;
+  color: rgb(250, 224, 72);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .green {
   color: rgb(37, 100, 37);
-}
-
-.teal {
-  color: teal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .cloudy {

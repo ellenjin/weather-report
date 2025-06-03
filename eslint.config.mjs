@@ -5,54 +5,71 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import js from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
+import eslintPluginPrettier from "eslint-plugin-prettier";
+import { flatConfig as prettierFlatConfig } from "eslint-config-prettier";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-export default [...compat.extends("plugin:react/recommended", "standard"), {
+export default [
+  ...prettierFlatConfig,
+  ...compat.extends("plugin:react/recommended", "standard"),
+
+  {
     plugins: {
-        jest,
-        react,
+      jest,
+      react,
+      prettier: eslintPluginPrettier,
     },
 
     languageOptions: {
-        globals: {
-            ...globals.browser,
-        },
+      globals: {
+        ...globals.browser,
+      },
 
-        ecmaVersion: "latest",
-        sourceType: "module",
+      ecmaVersion: "latest",
+      sourceType: "module",
 
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
-            },
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
+      },
     },
 
     settings: {
-        react: {
-            version: "detect",
-        },
+      react: {
+        version: "detect",
+      },
     },
 
     rules: {
-        "max-len": [1, 120, 2, {
-            ignoreComments: true,
-        }],
+      "max-len": [
+        1,
+        120,
+        2,
+        {
+          ignoreComments: true,
+        },
+      ],
 
-        "no-console": "off",
-        quotes: ["warn", "single"],
+      "no-console": "off",
+      quotes: ["warn", "single"],
 
-        camelcase: ["error", {
-            properties: "always",
-        }],
+      camelcase: [
+        "error",
+        {
+          properties: "always",
+        },
+      ],
 
-        semi: ["warn", "always"],
+      semi: ["warn", "always"],
+      "prettier/prettier": "error",
     },
-}];
+  },
+];

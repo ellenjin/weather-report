@@ -3,13 +3,14 @@ h2 {
 }
 
 body {
+background: url('https://cdn.pixabay.com/photo/2023/11/29/17/51/clouds-8420083_1280.jpg') no-repeat center center fixed;
+background-size: cover;
 display: flex;
 flex-direction: column;
 align-items: center;
 font-family: "Rubik", sans-serif;
 font-size: 18px;
 letter-spacing: 1.5px;
-background-color: #c8d7f6;
 margin: 2rem;
 }
 
@@ -22,7 +23,6 @@ color: white;
 }
 
 .header__header > h1 {
-margin-right: 2rem;
 font-size: 3em;
 }
 
@@ -42,14 +42,14 @@ content: "✨";
 .garden__section  {
 border-radius: 8px;
 padding: 2rem;
-background-color: white;
+background-color: rgb(236, 234, 234, 0.8);
 }
 
 .widjets {
   display: grid;
   grid-template-columns: 1fr 1fr; 
   grid-template-rows: auto auto; 
-  gap: 10px;
+  gap: 20px;
 }
 
 .temperature__section button {
@@ -59,9 +59,14 @@ background-color: white;
     padding: 10px 12px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-    border-radius: 10px;
+    border-radius: 20px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.temperature__section button:hover {
+  background-color: #3d6d40; 
 }
 
 .garden__section {
@@ -98,12 +103,20 @@ font-size: 2em;
 
 .city-name__reset-btn {
 border: 0;
-background-color: #1655cc;
+background-color: #6a8ac7;
 color: white;
 border-radius: 8px;
 padding: 1rem;
 font-family: "Rubik", sans-serif;
+cursor: pointer; 
+transition: background-color 0.3s ease;
 }
+
+.city-name__reset-btn:hover {
+  background-color: #5860ba; 
+}
+
+
 
 .red {
 color: red;

@@ -24,7 +24,6 @@ cityNameResetBtn.addEventListener('click', () => { // Could change to just 'set'
 });
 
 // Wave 2
-
 const updateTempEmoji = () => {
     tempValue.textContent = currentTemp
     tempValue.classList.remove("red", "orange", "yellow", "green", "teal")
@@ -54,8 +53,8 @@ document.getElementById('decreaseTempControl').addEventListener('click', () => {
     updateTempEmoji();
 })
 
-updateTempEmoji()
+updateTempEmoji();
 
-// Wave 4
+// Wave 5
 const skyValue = skySelection.value;
 

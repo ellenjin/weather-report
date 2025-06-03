@@ -207,3 +207,19 @@ select#skySelect:focus {
   outline: none;
   border-color: #4c6bbd;
 }
+
+.apply-city-arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.apply-city-arrow:hover {
+  transform: scale(1.3);
+}
+
+.city-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

@@ -4,6 +4,7 @@ const headerCityName = document.getElementById("headerCityName");
 const tempValue = document.getElementById("tempValue");
 const gardenEmoji = document.getElementById("gardenContent");
 const currentTempButton = document.getElementById("currentTempButton");
+const applyCityArrow = document.getElementById('applyCity');
 
 let currentTemp = 70;
 const skySelection = document.getElementById("skySelect");
@@ -17,6 +18,10 @@ function updateCityName() {
         headerCityName.textContent = '';
     }
 }
+
+applyCityArrow.addEventListener('click', () => {
+    updateCityName();
+});
 
 cityNameInput.addEventListener('change', updateCityName);
 

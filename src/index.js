@@ -29,16 +29,16 @@ const updateTempEmoji = () => {
 
     if (currentTemp >= 80) {
         tempValue.classList.add("red")
-        gardenEmoji.textContent = "🌞🏜️🌵🦎🔥"
+        gardenEmoji.textContent = "🌞🌵🦎"
     } else if (currentTemp >= 70) {
         tempValue.classList.add("orange");
-        gardenEmoji.textContent = "🌸🦋🌼🌺🐝";
+        gardenEmoji.textContent = "🌸🦋🌼";
     } else if (currentTemp >= 60) {
         tempValue.classList.add("yellow");
-        gardenEmoji.textContent = "🌲🦌🍄🌳🪵";
+        gardenEmoji.textContent = "🌲🦌🍄";
     } else {
         tempValue.classList.add("green");
-        gardenEmoji.textContent = "❄️🌨️⛄️🌲🏔️";
+        gardenEmoji.textContent = "🌨️⛄️🏔️";
     }
 }
 

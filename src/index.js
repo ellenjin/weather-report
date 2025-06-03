@@ -21,8 +21,8 @@ function updateCityName() {
 cityNameInput.addEventListener('change', updateCityName);
 
 cityNameResetBtn.addEventListener('click', () => { // Could change to just 'set'? Or did we want it to actually "reset" as it is doing right now
-    cityNameInput.value = '';
-    headerCityName.textContent = '';
+    cityNameInput.value = 'Seattle';
+    headerCityName.textContent = 'Seattle';
 });
 
 // Wave 2

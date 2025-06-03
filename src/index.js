@@ -5,13 +5,12 @@ const tempValue = document.getElementById('tempValue');
 const gardenEmoji = document.getElementById('gardenContent');
 const currentTempButton = document.getElementById('currentTempButton');
 const applyCityArrow = document.getElementById('applyCity');
-
-let currentTemp = 70;
 const skySelection = document.getElementById('skySelect');
 
-// Wave 3
+let currentTemp = 70;
+
 function updateCityName() {
-  const city = cityNameInput.value.trim(); // Used trim to get rid of leading.trailing whitespace
+  const city = cityNameInput.value.trim();
   if (city) {
     headerCityName.textContent = city;
   } else {
@@ -24,14 +23,13 @@ applyCityArrow.addEventListener('click', () => {
 });
 
 cityNameInput.addEventListener('change', updateCityName);
+const skyValue = skySelection.value;
 
 cityNameResetBtn.addEventListener('click', () => {
-  // Could change to just 'set'? Or did we want it to actually "reset" as it is doing right now
   cityNameInput.value = 'Seattle';
   headerCityName.textContent = 'Seattle';
 });
 
-// Wave 2
 const updateTempEmoji = () => {
   tempValue.textContent = currentTemp;
   tempValue.classList.remove('red', 'orange', 'yellow', 'green', 'teal');
@@ -105,5 +103,4 @@ const getRealWeather = (lat, lon) => {
 
 updateTempEmoji();
 
-// Wave 5
-const skyValue = skySelection.value;
+

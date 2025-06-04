@@ -39,7 +39,7 @@ cityNameResetBtn.addEventListener('click', () => {
 });
 
 const updateTempEmoji = () => {
-  const displayTemp = isFahrenheit
+  const displayTemp = !isFahrenheit
     ? currentTemp
     : Math.round(((currentTemp - 32) * 5) / 9);
   tempValue.textContent = `${displayTemp}`;

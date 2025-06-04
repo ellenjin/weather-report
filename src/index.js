@@ -6,7 +6,7 @@ const gardenEmoji = document.getElementById('gardenContent');
 const currentTempButton = document.getElementById('currentTempButton');
 const applyCityArrow = document.getElementById('applyCity');
 const skySelection = document.getElementById('skySelect');
-
+const skyDisplay = document.getElementById('skyDisplay');
 let isFahrenheit = true;
 let currentTemp = 70;
 
@@ -39,7 +39,7 @@ cityNameResetBtn.addEventListener('click', () => {
 });
 
 const updateTempEmoji = () => {
-  const displayTemp = isFahrenheit
+  const displayTemp = !isFahrenheit
     ? currentTemp
     : Math.round(((currentTemp - 32) * 5) / 9);
   tempValue.textContent = `${displayTemp}`;
@@ -114,3 +114,24 @@ const getRealWeather = (lat, lon) => {
 };
 
 updateTempEmoji();
+
+skySelection.addEventListener('change', () => {
+  const selected = skySelection.value;
+
+  switch (selected) {
+    case 'Sunny':
+      skyDisplay.textContent = '☀️';
+      break;
+    case 'Cloudy':
+      skyDisplay.textContent = '☁️';
+      break;
+    case 'Rainy':
+      skyDisplay.textContent = '🌧️';
+      break;
+    case 'Snowy':
+      skyDisplay.textContent = '❄️';
+      break;
+    default:
+      skyDisplay.textContent = '';
+  }
+});

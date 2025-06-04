@@ -6,7 +6,7 @@ const gardenEmoji = document.getElementById('gardenContent');
 const currentTempButton = document.getElementById('currentTempButton');
 const applyCityArrow = document.getElementById('applyCity');
 const skySelection = document.getElementById('skySelect');
-
+const skyDisplay = document.getElementById('skyDisplay');
 let currentTemp = 70;
 
 function updateCityName() {
@@ -103,4 +103,23 @@ const getRealWeather = (lat, lon) => {
 
 updateTempEmoji();
 
+skySelection.addEventListener('change', () => {
+  const selected = skySelection.value;
 
+  switch (selected) {
+    case 'Sunny':
+      skyDisplay.textContent = '☀️';
+      break;
+    case 'Cloudy':
+      skyDisplay.textContent = '☁️';
+      break;
+    case 'Rainy':
+      skyDisplay.textContent = '🌧️';
+      break;
+    case 'Snowy':
+      skyDisplay.textContent = '❄️';
+      break;
+    default:
+      skyDisplay.textContent = '';
+  }
+});

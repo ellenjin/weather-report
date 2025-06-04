@@ -26,7 +26,7 @@
       </h2>
     </header>
 
-    <div class="widjets">
+    <div class="widgets">
       <section class="temperature__section">
         <h2>Temperature</h2>
         <div class="temperature__content">
@@ -45,6 +45,7 @@
 
       <section class="sky__section">
         <h2>Sky</h2>
+        <div id="skyDisplay" class="sky__display"></div>
         <select id="skySelect">
           <option value="">No sky selected</option>
           <option value="Sunny">Sunny</option>
@@ -62,7 +63,9 @@
             <i class="fas fa-arrow-right"></i>
           </span>
         </div>
-        <button id="cityNameReset" class="city-name__reset-btn">Reset</button>
+        <button id="cityNameReset" class="city-name__reset-btn">
+          Reset to default
+        </button>
       </section>
 
       <section class="garden__section">

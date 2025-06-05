@@ -118,18 +118,24 @@ updateTempEmoji();
 skySelection.addEventListener('change', () => {
   const selected = skySelection.value;
 
+  document.body.classList.remove('sunny-bg', 'cloudy-bg', 'rainy-bg', 'snowy-bg');
+
   switch (selected) {
     case 'Sunny':
       skyDisplay.textContent = '☀️';
+      document.body.classList.add('sunny-bg');
       break;
     case 'Cloudy':
       skyDisplay.textContent = '☁️';
+      document.body.classList.add('cloudy-bg');
       break;
     case 'Rainy':
       skyDisplay.textContent = '🌧️';
+      document.body.classList.add('rainy-bg');
       break;
     case 'Snowy':
       skyDisplay.textContent = '❄️';
+      document.body.classList.add('snowy-bg');
       break;
     default:
       skyDisplay.textContent = '';

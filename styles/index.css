@@ -11,6 +11,26 @@ body {
   margin: 2rem;
 }
 
+body.sunny-bg {
+  background: url('https://cdn.pixabay.com/photo/2012/12/29/21/11/sunrise-73074_1280.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.cloudy-bg {
+  background: url('https://cdn.pixabay.com/photo/2020/08/11/21/39/clouds-5481190_1280.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.rainy-bg {
+  background: url('https://cdn.pixabay.com/photo/2021/05/10/14/48/rain-6243559_1280.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body.snowy-bg {
+  background: url('https://cdn.pixabay.com/photo/2020/02/08/14/36/trees-4830285_1280.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 h1,
 h2 {
   margin: 0.4em;

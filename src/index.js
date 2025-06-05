@@ -8,7 +8,7 @@ const applyCityArrow = document.getElementById('applyCity');
 const skySelection = document.getElementById('skySelect');
 const skyDisplay = document.getElementById('skyDisplay');
 let isFahrenheit = true;
-let currentTemp = 70;
+let currentTemp = 50;
 
 function updateCityName() {
   const city = cityNameInput.value.trim();

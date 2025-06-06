@@ -83,7 +83,8 @@ currentTempButton.addEventListener('click', () => {
 
 const getLatandLon = (city) => {
   axios
-    .get('http://localhost:5000/location', {
+    // .get('http://localhost:5000/location', {
+    .get('https://ada-weather-report-proxy-server.onrender.com/location', {
       params: { q: city },
     })
     .then((response) => {
@@ -99,7 +100,8 @@ const getLatandLon = (city) => {
 
 const getRealWeather = (lat, lon) => {
   axios
-    .get('http://localhost:5000/weather', {
+    // .get('http://localhost:5000/weather', {
+    .get('https://ada-weather-report-proxy-server.onrender.com/weather', {
       params: { lat, lon },
     })
     .then((response) => {
@@ -118,7 +120,12 @@ updateTempEmoji();
 skySelection.addEventListener('change', () => {
   const selected = skySelection.value;
 
-  document.body.classList.remove('sunny-bg', 'cloudy-bg', 'rainy-bg', 'snowy-bg');
+  document.body.classList.remove(
+    'sunny-bg',
+    'cloudy-bg',
+    'rainy-bg',
+    'snowy-bg',
+  );
 
   switch (selected) {
     case 'Sunny':
